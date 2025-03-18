@@ -1,23 +1,18 @@
-*.asv
-*.mex*
-*.mat
-*.mlpkginstall
+# Ignore MATLAB app installer files
 *.mlappinstall
-*.slxc
-*.mdl
-*.slx
-*.prj
-*.sh
 
-*.mlappinstall
+# Ignore autosave files
 *.autosave/
 
-build/for_redistribution/
-build/for_testing/
-build/log/
-data/
-figures/
-output/
+# Ignore build artifacts
+build/*/includedSupportPackages.txt
+build/*/mccExcludedFiles.log
+build/*/requiredMCRProducts.txt
+build/*/unresolvedSymbols.txt
 
-Thumbs.db
+# Ignore compilation script and shell scripts
+compile_project.m
+*.sh
 
+# Ignore system files
+Thumbs.db  

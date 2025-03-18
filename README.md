@@ -144,7 +144,11 @@ We welcome contributions! If you'd like to improve the app, feel free to:
 
 ## 📜 License
 
+<<<<<<< HEAD
 SDAnext is released under the MIT License. See the `LICENSE` file for details.
+=======
+SDAnext is released under the Apache-2.0 License. See the `LICENSE` file for details.
+>>>>>>> 6b005dd1c042603bf6458910dfd9a150a6fb5d32
 
 ## 📧 Contact
 
