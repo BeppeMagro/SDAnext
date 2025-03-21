@@ -77,6 +77,35 @@ If you don't have MATLAB installed, follow these simple steps:
     -   Linear-Quadratic-Linear (LQL)
 -   🔧 Adjust fitting parameters as needed.
 
+### 🔎 File Format Requirements
+
+The input data file should be a plain text file with the following specifications:
+
+- Two required columns:
+  - **Dose (Gy)**: numeric, ≥ 0
+  - **Survival Fraction**: numeric, between 0 and 1
+- An optional third column:
+  - **Standard Deviation**: numeric, used for computing weights (if missing, weights are uniform)
+
+**Example:**
+
+    ```sh
+    # Sample data
+	!Title='Radiation Dose Response Data'
+	!Color='Blue'
+	!DisplayName='Sample Curve A'
+	1.0 0.9 0.05
+	2.0 0.8 0.05
+	3.0 0.7 0.04
+	4.0 0.6 0.03
+    ```
+
+- Lines starting with `!` are treated as metadata and support the following fields: `Title`, `Color`, `DisplayName`.
+- Lines starting with `#` are treated as comments and ignored, wherever they appear in the file. This means they can also be used to temporarily exclude data rows from analysis.
+- Data lines must contain numeric values separated by spaces or tabs.
+- If a data point with **dose = 0** and **survival fraction = 1** is not present, it will be automatically added by the app.
+- Data is automatically sorted in ascending order of dose before being used.
+
 **Step 3: 📈 Fit the Model**
 
 -   🖱️ Click "Fit Data" to perform curve fitting.
@@ -144,11 +173,8 @@ We welcome contributions! If you'd like to improve the app, feel free to:
 
 ## 📜 License
 
-<<<<<<< HEAD
-SDAnext is released under the MIT License. See the `LICENSE` file for details.
-=======
 SDAnext is released under the Apache-2.0 License. See the `LICENSE` file for details.
->>>>>>> 6b005dd1c042603bf6458910dfd9a150a6fb5d32
+
 
 ## 📧 Contact
 
