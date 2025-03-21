@@ -89,7 +89,6 @@ The input data file should be a plain text file with the following specification
 
 **Example:**
 
-    ```markdown
     # Sample data
 	!Title='Radiation Dose Response Data'
 	!Color='Blue'
@@ -98,7 +97,6 @@ The input data file should be a plain text file with the following specification
 	2.0 0.8 0.05
 	3.0 0.7 0.04
 	4.0 0.6 0.03
-    ```
 
 - Lines starting with `!` are treated as metadata and support the following fields: `Title`, `Color`, `DisplayName`.
 - Lines starting with `#` are treated as comments and ignored, wherever they appear in the file. This means they can also be used to temporarily exclude data rows from analysis.
