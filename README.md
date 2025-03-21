@@ -89,7 +89,7 @@ The input data file should be a plain text file with the following specification
 
 **Example:**
 
-    ```sh
+    ```markdown
     # Sample data
 	!Title='Radiation Dose Response Data'
 	!Color='Blue'
