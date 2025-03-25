@@ -42,6 +42,54 @@ If you don't have MATLAB installed, follow these simple steps:
         ```sh
         ./SDAnext
         ```
+### 📂 Where to Find the Executable (for Non-Technical Users)
+
+> ⚠️ **Important:** After downloading or extracting the SDAnext package, the executable file `SDAnext.exe` is **not located directly in the main folder**.
+
+Follow these steps to locate and run it:
+
+1. 📁 Open the folder named `build`.
+2. 📆 Inside `build`, you will find one or more subfolders named like:
+    ```
+    2025-03-25-1
+    2025-03-25-2
+    ```
+    These names reflect the **date and sequence number** of each build (format: `YYYY-MM-DD-<index>`).
+3. 🔍 Open the **most recent** subfolder.
+4. ▶️ Locate the file named:
+    ```
+    SDAnext.exe
+    ```
+    and double-click it to launch the application.
+
+💡 *Tip: Once you've found the executable, you can **copy `SDAnext.exe` anywhere** on your computer (e.g., Desktop, Documents, etc.). You may also delete the rest of the downloaded files if you no longer need them.*
+
+---
+
+### 🧩 About MATLAB Runtime
+
+To run the application, **MATLAB Runtime (R2023a)** must be installed **only once** on your system.
+
+- If it's already installed, **you don’t need to install it again**.
+- If you re-download a new version of SDAnext compiled with a different MATLAB version in the future, you'll need the **matching version** of the Runtime.
+
+📄 In that case, refer to the specific `README.txt` file found in the corresponding `build/YYYY-MM-DD-*` folder for updated instructions.
+
+---
+
+### 📦 Alternative Download via GitHub Releases
+
+You can also download the latest compiled version of the application directly from the **GitHub Releases section**.
+
+📍 On the main page of the GitHub repository, look at the **right-hand sidebar** or go to the **"Releases"** tab. There you will typically find:
+
+- The **latest executable** file (e.g., `SDA_v1.2.0.exe`)
+- A matching `README.txt` with build-specific instructions
+- The release title and version number (e.g., `SDAnext – Stable Release March 2025`)
+
+➡️ **Simply download the `.exe` file from there and run it – no need to navigate the folder structure manually.**
+
+---
 
 #### **2️⃣ Running from MATLAB (For Developers)**
 
