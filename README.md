@@ -12,6 +12,17 @@
 
 ---
 
+## 📚 Citation
+
+If you use **SDAnext** in your research, please cite:
+
+> Magro, G. (2025). *SDAnext (vX.Y) Survival Data Analysis*. GitHub. https://github.com/BeppeMagro/SDAnext  
+> Licensed under the Apache License 2.0.
+
+👉 Replace `vX.Y` with the current version number of the software.
+
+---
+
 ## 🚀 Installation
 
 ### 💻 System Requirements
