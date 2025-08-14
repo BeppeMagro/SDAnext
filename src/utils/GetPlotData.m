@@ -2,11 +2,15 @@ function [plotData, titleText] = GetPlotData(axesHandle)
 % Retrieve the title text
 titleText = axesHandle.Title.String;
 
+% Initialize storage for plot data
+plotData = struct([]);
+
 % Get all children of the axes
 children = axesHandle.Children;
 
-% Initialize storage for plot data
-plotData = struct();
+if isempty(children)
+    return;
+end
 
 % Iterate over all child objects (e.g., lines, scatter, etc.)
 for i = 1:numel(children)

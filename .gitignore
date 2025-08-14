@@ -15,4 +15,6 @@ compile_project.m
 *.sh
 
 # Ignore system files
-Thumbs.db  
+Thumbs.db
+
+# dummy change_1 to trigger commit

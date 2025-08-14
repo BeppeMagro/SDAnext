@@ -48,14 +48,14 @@ If you don't have MATLAB installed, follow these simple steps:
         ```
     -   🔑 You'll need **administrator rights** for installation.
 3.  ▶️ **Run SDAnext:**
-    -   **Windows:** Double-click `SDAnext.exe`.
+    -   **Windows:** Double-click `SDAnext_vX.Y.exe`.
     -   **macOS/Linux:** Open a terminal and run:
         ```sh
         ./SDAnext
         ```
 ### 📂 Where to Find the Executable (for Non-Technical Users)
 
-> ⚠️ **Important:** After downloading or extracting the SDAnext package, the executable file `SDAnext.exe` is **not located directly in the main folder**.
+> ⚠️ **Important:** After downloading or extracting the SDAnext package, the executable file `SDAnext_vX.Y.exe` is **not located directly in the main folder**.
 
 Follow these steps to locate and run it:
 
@@ -69,11 +69,11 @@ Follow these steps to locate and run it:
 3. 🔍 Open the **most recent** subfolder.
 4. ▶️ Locate the file named:
     ```
-    SDAnext.exe
+    SDAnext_vX.Y.exe
     ```
     and double-click it to launch the application.
 
-💡 *Tip: Once you've found the executable, you can **copy `SDAnext.exe` anywhere** on your computer (e.g., Desktop, Documents, etc.). You may also delete the rest of the downloaded files if you no longer need them.*
+💡 *Tip: Once you've found the executable, you can **copy `SDAnext_vX.Y.exe` anywhere** on your computer (e.g., Desktop, Documents, etc.). You may also delete the rest of the downloaded files if you no longer need them.*
 
 ---
 
@@ -94,7 +94,7 @@ You can also download the latest compiled version of the application directly fr
 
 📍 On the main page of the GitHub repository, look at the **right-hand sidebar** or go to the **"Releases"** tab. There you will typically find:
 
-- The **latest executable** file (e.g., `SDA_v1.2.0.exe`)
+- The **latest executable** file (e.g., `SDA_vX.Y.exe`)
 - A matching `README.txt` with build-specific instructions
 - The release title and version number (e.g., `SDAnext – Stable Release March 2025`)
 
@@ -170,7 +170,7 @@ The input data file should be a plain text file with the following specification
 
 **Step 4: 🔍 Analyze & Export**
 
--   📊 Compare multiple models within the plot window.
+-   📊 Compare multiple models within the viewer window.
 -   💾 Save fitted parameters and plots for further analysis.
 
 ## 🌟 Features
@@ -212,10 +212,6 @@ Other supported models extend this equation with cubic or threshold-based correc
     ```sh
     matlab -batch "ver"
     ```
-
-**🟡 Graphical or performance issues?**
-
--   ✔️ Update your graphics drivers and ensure your system meets the minimum requirements.
 
 ## 🗑️ Uninstallation
 
