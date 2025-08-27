@@ -228,6 +228,9 @@ We welcome contributions! If you'd like to improve the app, feel free to:
 
 SDAnext is released under the Apache-2.0 License. See the `LICENSE` file for details.
 
+## 💰 Funding
+
+This work was funded by the National Plan for NRRP Complementary Investments (PNC) in the call for the funding of research initiatives for technologies and innovative trajectories in the health – project n. PNC0000003 – *AdvaNced Technologies for Human-centrEd Medicine* (project acronym: **ANTHEM** – Cascade Call launched by SPOKE 3 POLIMI: **PRECISION**).
 
 ## 📧 Contact
 
