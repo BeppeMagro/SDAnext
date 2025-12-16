@@ -234,4 +234,4 @@ This work was funded by the National Plan for NRRP Complementary Investments (PN
 
 ## 📧 Contact
 
-For questions or support, contact: giuseppe.magro@cnao.com
+For questions or support, contact: giuseppe.magro@cnao.it
