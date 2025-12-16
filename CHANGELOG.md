@@ -10,3 +10,6 @@
 
 ## [0.2] - 2025-08-14
 - feat: added spinners in Viewer tab for font and scaling
+
+## [0.3] - 2025-12-16
+- fix: prevent row removal with zero stdDev in curve fitting pipeline
