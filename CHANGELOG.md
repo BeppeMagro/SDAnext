@@ -13,3 +13,6 @@
 
 ## [0.3] - 2025-12-16
 - fix: prevent row removal with zero stdDev in curve fitting pipeline
+
+## [0.4] - 2026-01-19
+- release: SDAnext v0.4 – refactor core workflow, extend RBE analysis, improve usability
