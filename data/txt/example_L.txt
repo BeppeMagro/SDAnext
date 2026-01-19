@@ -1,0 +1,13 @@
+# Example dataset for SDAnext
+!Title='Example L dataset'
+!DisplayName='L example'
+!Color='dark green'
+0.00 1.000 0.057
+1.00 0.701 0.034
+2.00 0.460 0.032
+3.00 0.304 0.023
+4.00 0.195 0.012
+5.00 0.131 0.009
+6.00 0.087 0.006
+7.00 0.063 0.006
+8.00 0.041 0.007

@@ -1,0 +1,13 @@
+# Example dataset for SDAnext
+!Title='Example Q dataset'
+!DisplayName='Q example'
+!Color='dark blue'
+0.00 1.000 0.055
+1.00 0.931 0.053
+2.00 0.828 0.041
+3.00 0.615 0.038
+4.00 0.440 0.024
+5.00 0.283 0.015
+6.00 0.165 0.018
+7.00 0.089 0.014
+8.00 0.040 0.010

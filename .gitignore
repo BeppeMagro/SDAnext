@@ -12,6 +12,7 @@ build/*/unresolvedSymbols.txt
 
 # Ignore compilation script and shell scripts
 compile_project.m
+make_callgraph_sdanext.m
 *.sh
 
 # Ignore system files
