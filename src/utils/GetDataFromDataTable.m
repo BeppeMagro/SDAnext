@@ -1,15 +1,25 @@
 function dataStruct = GetDataFromDataTable(DataTableData)
-% Retrieve data from DataTable
-% - stdDev = 0 preserved
-% - weights = 1/stdDev^2
-% - Inf / 0 regularised here (1e-6 / 1e6)
-% - compatibility preserving
+% GetDataFromDataTable
+%
+% Extracts dose (x), survival fraction (y), and weights (w)
+% from the App Designer DataTable.
+%
+% RIGOROUS BEHAVIOR:
+% - If no SD column is provided -> uniform weights (w = 1).
+% - If an SD column is provided:
+%     * All entries must be numeric.
+%     * No empty or non-numeric cells are allowed.
+%     * All SD values must be strictly positive.
+% - Weights are defined as w = 1 / SD^2.
+% - Only numerical regularisation of Inf/0 is performed.
+%
+% This avoids silent propagation of NaN weights.
 
     % ---------------------------------------------------------------------
-    % Retrieve numeric data
+    % Extract Dose (x) and Survival Fraction (y)
     % ---------------------------------------------------------------------
-    x = str2double(DataTableData(:, 1)); % Dose
-    y = str2double(DataTableData(:, 2)); % Survival Fraction
+    x = str2double(string(DataTableData(:, 1)));  % Dose [Gy]
+    y = str2double(string(DataTableData(:, 2)));  % Survival Fraction
 
     % ---------------------------------------------------------------------
     % Validate x and y
@@ -19,48 +29,74 @@ function dataStruct = GetDataFromDataTable(DataTableData)
     end
 
     if any(isinf(x)) || any(isinf(y))
-        error('Infinite data in Dose (x) or Survival Fraction (y) detected.');
+        error('Infinite values detected in Dose (x) or Survival Fraction (y).');
     end
 
     % ---------------------------------------------------------------------
-    % Retrieve stdDev (if present)
+    % Handle standard deviation column (optional)
     % ---------------------------------------------------------------------
     stdDev = [];
+
     if size(DataTableData, 2) >= 3
-        stdDev = str2double(DataTableData(:, 3));
+
+        % Convert SD column to numeric
+        stdDevRaw = string(DataTableData(:, 3));
+        stdDevNum = str2double(stdDevRaw);
+
+        % Case 1: Entire column empty or non-numeric → treat as no SD
+        if all(isnan(stdDevNum))
+            stdDev = [];
+
+        % Case 2: Partially invalid column → explicit error
+        elseif any(isnan(stdDevNum))
+            error(['Standard deviation column contains empty or non-numeric values. ' ...
+                   'Either provide all SD values or leave the entire column empty.']);
+
+        else
+            stdDev = stdDevNum;
+        end
     end
 
     % ---------------------------------------------------------------------
-    % Compute weights (theoretical)
+    % Compute weights
     % ---------------------------------------------------------------------
     if isempty(stdDev)
-        % No std dev column → uniform weights
+
+        % No SD provided → uniform weights
         w = ones(size(x));
+
     else
-        % Pure definition (0 -> Inf)
+
+        % Strict validation: SD must be strictly positive
+        if any(stdDev <= 0)
+            error('Standard deviation values must be strictly positive.');
+        end
+
+        % Theoretical definition
         w = 1 ./ (stdDev.^2);
 
         % -----------------------------------------------------------------
-        % Regularisation (NUMERICAL, not semantic)
+        % Numerical regularisation (only for extreme values)
         % -----------------------------------------------------------------
-        % stdDev == 0  -> very large weight
+        % Protect against extremely small SD → huge weights
         w(isinf(w)) = 1 / (1e-6)^2;
 
-        % very large stdDev or explicit zeros in weight -> very small weight
+        % Protect against extremely large SD → near-zero weights
         w(w == 0) = 1 / (1e6)^2;
     end
 
     % ---------------------------------------------------------------------
-    % Final validation
+    % Final safety check
     % ---------------------------------------------------------------------
-    if any(isnan(w))
-        error('Invalid weights (NaN) detected after processing.');
+    if any(isnan(w)) || any(~isfinite(w))
+        error('Invalid weights detected after processing.');
     end
 
     % ---------------------------------------------------------------------
-    % Output struct
+    % Output structure
     % ---------------------------------------------------------------------
     dataStruct.x = x;
     dataStruct.y = y;
     dataStruct.w = w;
+
 end

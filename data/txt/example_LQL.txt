@@ -1,0 +1,13 @@
+# Example dataset for SDAnext
+!Title='Example LQL dataset'
+!DisplayName='LQL example'
+!Color='dark gray'
+0.00 1.000 0.056
+1.00 0.828 0.043
+2.00 0.632 0.032
+3.00 0.469 0.026
+4.00 0.335 0.020
+5.00 0.155 0.015
+6.00 0.079 0.010
+7.00 0.038 0.011
+8.00 0.021 0.006

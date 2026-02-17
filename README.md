@@ -1,14 +1,19 @@
 # 🧬 SDAnext – Survival Data Analysis in MATLAB 📊
 
+---
+
 ## 🌟 Overview
 
-**SDAnext** is a powerful MATLAB application designed for analyzing **survival fraction data** in radiation biology and dose-response studies. It provides an intuitive graphical user interface (**GUI**) to streamline your analysis workflow:
+**SDAnext** is a MATLAB-based application for the analysis of **cell survival fraction data** in radiation biology and dose–response studies. It provides an intuitive graphical user interface (**GUI**) designed to support both routine analyses and exploratory model comparisons.
 
-✅ Load and validate experimental data effortlessly.
-📈 Fit survival models (L, Q, LQ, LQC, LQL) with precision.
-⚙️ Perform robust curve fitting using weighted least squares for enhanced accuracy.
-📊 Visualize and compare dose-response curves dynamically.
-🎯 Estimate dose for a given survival fraction with ease.
+| ⭐ Feature             | 📝 Description                                                |
+| ----------------------- | ------------------------------------------------------------- |
+| 📂 Data validation     | Automatic checks and preprocessing                            |
+| 📈 Model fitting       | Multiple radiobiological survival models                      |
+| ⚖️ Weighted fits       | Inverse-variance weighting when SDs are available             |
+| 🔍 Model scanning      | Comparison of successfully converged and interpretable models |
+| 🧬 Multisession viewer | Overlay and styling of multiple datasets                      |
+| 🎯 RBE analysis        | SF-based and dose-based RBE computation                       |
 
 ---
 
@@ -16,7 +21,7 @@
 
 If you use **SDAnext** in your research, please cite:
 
-> Magro, G. (2025). *SDAnext (vX.Y) Survival Data Analysis*. GitHub. https://github.com/BeppeMagro/SDAnext  
+> Magro, G. (2026). *SDAnext (vX.Y) Survival Data Analysis*. GitHub. https://github.com/BeppeMagro/SDAnext  
 > Licensed under the Apache License 2.0.
 
 👉 Replace `vX.Y` with the current version number of the software.
@@ -27,55 +32,38 @@ If you use **SDAnext** in your research, please cite:
 
 ### 💻 System Requirements
 
--   **Operating System:** Windows / macOS / Linux
--   **MATLAB Version:** **R2023a or later** *(for development use)*
--   **MATLAB Runtime Version:** **R2023a** *(for standalone executable)*
--   **Required Toolbox:** **Curve Fitting Toolbox**
+* **Operating System:**
+  * **Windows only** (standalone executable available)
+  * 🍎 macOS / 🐧 Linux: *source code only; standalone executable not available*
+* 🧮 **MATLAB Version:** R2023a or later (running from source)
+* 🔧 **MATLAB Runtime:** R2023a (standalone executable)
+* 📦 **Required Toolbox:** Curve Fitting Toolbox
 
-### 📥 Download & Setup
+> ⚠️ *At present, SDAnext is distributed as a standalone application **only for Windows** (`.exe`). No macOS or Linux standalone binaries are provided.*
 
-#### **1️⃣ Installing the Standalone Executable (No MATLAB Required)**
+### 📥 Standalone Executable for Windows (No MATLAB Required)
 
-If you don't have MATLAB installed, follow these simple steps:
+If you do **not** have MATLAB installed:
 
-1.  📦 **Download SDAnext Executable** and extract it to your preferred location.
-2.  🛠️ **Install MATLAB Runtime** (if not already installed):
-    -   🌐 Download MATLAB Runtime **R2023a** from MathWorks:
-        👉 [Download MATLAB Runtime](https://www.mathworks.com/products/compiler/mcr/index.html)
-    -   💻 Or install it from MATLAB by running:
-        ```matlab
-        >> mcrinstaller
-        ```
-    -   🔑 You'll need **administrator rights** for installation.
-3.  ▶️ **Run SDAnext:**
-    -   **Windows:** Double-click `SDAnext_vX.Y.exe`.
-    -   **macOS/Linux:** Open a terminal and run:
-        ```sh
-        ./SDAnext
-        ```
-### 📂 Where to Find the Executable (for Non-Technical Users)
-
-> ⚠️ **Important:** After downloading or extracting the SDAnext package, the executable file `SDAnext_vX.Y.exe` is **not located directly in the main folder**.
-
-Follow these steps to locate and run it:
-
-1. 📁 Open the folder named `build`.
-2. 📆 Inside `build`, you will find one or more subfolders named like:
-    ```
-    2025-03-25-1
-    2025-03-25-2
-    ```
-    These names reflect the **date and sequence number** of each build (format: `YYYY-MM-DD-<index>`).
-3. 🔍 Open the **most recent** subfolder.
-4. ▶️ Locate the file named:
-    ```
-    SDAnext_vX.Y.exe
-    ```
-    and double-click it to launch the application.
+1.  🛠️ **Install MATLAB Runtime** (required only once):
+    -   🌐 [Download MATLAB Runtime](https://www.mathworks.com/products/compiler/mcr/index.html) **R2023a** from MathWorks:
+        -   🔑 You'll need **administrator rights** for installation.
+2.  📦 **Download SDAnext Executable**
+    -   🔹 **Option A – GitHub Releases section (recommended)**
+        - Precompiled versions of SDAnext are available under the Releases section on GitHub.
+        - Each release corresponds to a specific software version.
+        - The Windows executable `SDAnext_vX.Y.exe` is directly visible and downloadable.
+        - In this case, simply download the `.exe` file.
+    -   🔹 **Option B – GitHub Code page**
+        1. Go to the main GitHub repository page.
+        2. Click the green **Code** button and select **Download ZIP**.
+        3. Extract the ZIP archive to your preferred location.
+        4. Navigate to the `build` directory and open the most recent subfolder named `YYYY-MM-DD-<index>` (these names reflect the **date and sequence number** of each build) and find the `.exe` file.
 
 💡 *Tip: Once you've found the executable, you can **copy `SDAnext_vX.Y.exe` anywhere** on your computer (e.g., Desktop, Documents, etc.). You may also delete the rest of the downloaded files if you no longer need them.*
 
----
+🚀 **Launch the application by double-clicking `SDAnext_vX.Y.exe`.**
+> 🚫 *macOS and Linux users cannot currently run SDAnext as a standalone application, as no platform-specific executables are available.*
 
 ### 🧩 About MATLAB Runtime
 
@@ -84,104 +72,117 @@ To run the application, **MATLAB Runtime (R2023a)** must be installed **only onc
 - If it's already installed, **you don’t need to install it again**.
 - If you re-download a new version of SDAnext compiled with a different MATLAB version in the future, you'll need the **matching version** of the Runtime.
 
-📄 In that case, refer to the specific `README.txt` file found in the corresponding `build/YYYY-MM-DD-*` folder for updated instructions.
+📄 In that case, refer to the specific `readme.txt` file found in the corresponding `build/YYYY-MM-DD-*` folder for updated instructions.
 
----
-
-### 📦 Alternative Download via GitHub Releases
-
-You can also download the latest compiled version of the application directly from the **GitHub Releases section**.
-
-📍 On the main page of the GitHub repository, look at the **right-hand sidebar** or go to the **"Releases"** tab. There you will typically find:
-
-- The **latest executable** file (e.g., `SDA_vX.Y.exe`)
-- A matching `README.txt` with build-specific instructions
-- The release title and version number (e.g., `SDAnext – Stable Release March 2025`)
-
-➡️ **Simply download the `.exe` file from there and run it – no need to navigate the folder structure manually.**
-
----
-
-#### **2️⃣ Running from MATLAB (For Developers)**
+### ⚙ Running from MATLAB (For Developers)
 
 1.  📂 Open MATLAB and navigate to the `SDAnext` folder:
-
     ```matlab
     cd path_to_SDAnext
     ```
-
 2.  🚀 Launch the app:
-
-    -   🎨 Open `SDAnext.mlapp` in App Designer and click Run.
+    -   🎨 Open `SDAnext.mlapp` in App Designer and **click Run**.
     -   ⌨️ Or execute in the MATLAB command window:
-
         ```matlab
         app = SDAnext;
         ```
 
-## 💡 How to Use
+---
 
-**Step 1: 📂 Load Data**
+## 🔎 Input File Format
 
--   🖱️ Click "Load Data" and select your file.
--   ✅ The app automatically validates and preprocesses the dataset.
+Plain text input files must contain:
 
-**Step 2: 📊 Select Model**
+* **Dose (Gy)**
+* **Survival Fraction** (0–1)
+* Optional: **Standard Deviation** (used for weighting)
 
--   🔍 Choose a survival model:
-    -   Linear (L)
-    -   Quadratic (Q)
-    -   Linear-Quadratic (LQ)
-    -   Linear-Quadratic-Cubic (LQC)
-    -   Linear-Quadratic-Linear (LQL)
--   🔧 Adjust fitting parameters as needed.
+📌 Metadata lines start with `!` and support:
 
-### 🔎 File Format Requirements
+* `Title`
+* `DisplayName`
+* `Color`
 
-The input data file should be a plain text file with the following specifications:
-
-- Two required columns:
-  - **Dose (Gy)**: numeric, ≥ 0
-  - **Survival Fraction**: numeric, between 0 and 1
-- An optional third column:
-  - **Standard Deviation**: numeric, used for computing weights (if missing, weights are uniform)
+💬 Comment lines starting with `#` are ignored and may appear anywhere.
 
 **Example:**
 
-    # Sample data
-	!Title='Radiation Dose Response Data'
-	!Color='Blue'
-	!DisplayName='Sample Curve A'
-	1.0 0.9 0.05
-	2.0 0.8 0.05
-	3.0 0.7 0.04
-	4.0 0.6 0.03
+```
+!Title='Radiation Dose Response Data'
+!DisplayName='Sample Curve A'
+!Color='Blue'
+1.0 0.90 0.05
+2.0 0.80 0.05
+3.0 0.70 0.04
+4.0 0.60 0.03
+```
 
-- Lines starting with `!` are treated as metadata and support the following fields: `Title`, `Color`, `DisplayName`.
-- Lines starting with `#` are treated as comments and ignored, wherever they appear in the file. This means they can also be used to temporarily exclude data rows from analysis.
-- Data lines must contain numeric values separated by spaces or tabs.
-- If a data point with **dose = 0** and **survival fraction = 1** is not present, it will be automatically added by the app.
-- Data is automatically sorted in ascending order of dose before being used.
+➕ If a data point at **dose = 0** and **SF = 1** is missing, it is added automatically.
+📐 Data are sorted by ascending dose before fitting.
 
-**Step 3: 📈 Fit the Model**
+---
 
--   🖱️ Click "Fit Data" to perform curve fitting.
--   👀 View the fitted curve and model parameters instantly.
+## 💡 Basic Workflow
 
-**Step 4: 🔍 Analyze & Export**
+SDAnext is organized around two main tabs, corresponding to two complementary analysis stages: **Fitter** and **Viewer**.
 
--   📊 Compare multiple models within the viewer window.
--   💾 Save fitted parameters and plots for further analysis.
+### 🔬 Fitter Tab – Survival Curve Fitting
 
-## 🌟 Features
+The **Fitter** tab is dedicated to loading experimental data, fitting survival models, and inspecting fit quality and parameters.
 
-| Feature                     | Description                                                                  |
-| :-------------------------- | :--------------------------------------------------------------------------- |
-| 📂 Data Import & Validation | Supports structured tabular data (Dose, SF, StdDev).                         |
-| 📈 Model Selection          | Supports multiple survival models (L, Q, LQ, LQC, LQL).                      |
-| ⚙️ Robust Curve Fitting     | Uses MATLAB's `fit` function with weighted least squares.               |
-| 📉 Plotting & Visualization | Multi-session support, log-scale Y-axis, customizable plots.            |
-| 🎯 Dose Estimation          | Computes the dose corresponding to a given survival fraction.               |
+**Typical workflow:**
+
+1. 📂 **Load experimental data**
+   - Load one or more datasets using the **Data Loader** panel (`.txt` or `.mat`). Data are automatically validated and preprocessed.
+
+2. 🧮 **Select a survival model**
+   - Choose among the available models:
+     * Linear (L)
+     * Quadratic (Q)
+     * Linear–Quadratic (LQ)
+     * Linear–Quadratic–Cubic (LQC)
+     * Linear–Quadratic–Linear (LQL)
+
+3. ⚙️ **Configure fit options**
+   - Adjust bounds, initial guesses, weighting options, and confidence interval settings as needed.
+
+4. ▶️ **Run the fit**
+   - Click **Fit Data** to perform the curve fitting. When experimental standard deviations are provided, weighted least squares are applied automatically.
+
+5. 📊 **Inspect results**
+
+   * View fitted curves overlaid on experimental data
+   * Inspect fitted parameters and uncertainties
+   * Examine goodness-of-fit metrics (RMSE, adjusted R-square, normalized SSE)
+
+6. 🔍 **Model scanning (optional)**
+   - Use the **Scan available models** function to automatically test all supported models and compare only those that successfully converge and yield statistically meaningful results.
+
+7. 🔁 **Bidirectional interpolation (optional)**
+   - Use the **Interpolator** tool to compute:
+     * Dose → Survival Fraction
+     * Survival Fraction → Isoeffective Dose
+
+### 📈 Viewer Tab – Multi-session Analysis and RBE
+
+The **Viewer** tab is designed for comparative analyses across multiple datasets and fitted models, including RBE evaluation.
+
+**Typical workflow:**
+
+1. 📥 **Load a session file**
+   - Import one or more previously fitted sessions (`.mat` files) generated in the Fitter tab.
+2. 🧬 **Manage multiple datasets**
+   - Overlay multiple experimental curves and fitted models in a single plot. Styling options allow customization of colors, markers, and line styles.
+3. 🎯 **Select the reference model**
+   - Explicitly choose the reference curve using the dedicated drop-down menu. The selected reference defines the baseline for RBE calculations.
+4. 🧮 **Compute RBE**
+   - Trigger RBE computation using the **Compute RBE** control. Two evaluation modes are supported:
+      * **Survival-fraction–based RBE:** RBE at fixed SF values
+      * **Dose-based RBE:** RBE at fixed reference doses (e.g. 2 Gy)
+5. 💾 **Export results**
+   - Export RBE tables and related quantities in a structured text format for downstream statistical or clinical analyses.
+
+---
 
 ## 🔬 Scientific Background
 
@@ -195,7 +196,9 @@ $D$ = Radiation dose (Gy)
 $SF$ = Survival fraction
 $\alpha$, $\beta$ = Model parameters
 
-Other supported models extend this equation with cubic or threshold-based corrections.
+Other supported models extend this equation with cubic or dose threshold-based corrections.
+
+---
 
 ## 🛠️ Troubleshooting
 
