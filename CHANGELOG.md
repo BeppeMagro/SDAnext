@@ -17,5 +17,3 @@
 ## [0.4] - 2026-01-19
 - release: SDAnext v0.4 – refactor core workflow, extend RBE analysis, improve usability
 
-## [0.5] - 2026-02-17
-- fix: enforce rigorous STD handling and prevent out-of-range spinner errors in MultiSession restore
