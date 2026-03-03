@@ -20,3 +20,6 @@
 
 ## [0.5] - 2026-02-17
 - fix: strict SD handling and safe spinner initialization in MultiSession view
+
+## [0.6] - 2026-03-03
+- fix: relax SD constraint to non-negative in GetDataFromDataTable
