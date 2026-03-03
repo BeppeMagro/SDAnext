@@ -9,7 +9,7 @@ function dataStruct = GetDataFromDataTable(DataTableData)
 % - If an SD column is provided:
 %     * All entries must be numeric.
 %     * No empty or non-numeric cells are allowed.
-%     * All SD values must be strictly positive.
+%     * All SD values must be non-negative.
 % - Weights are defined as w = 1 / SD^2.
 % - Only numerical regularisation of Inf/0 is performed.
 %
@@ -67,9 +67,9 @@ function dataStruct = GetDataFromDataTable(DataTableData)
 
     else
 
-        % Strict validation: SD must be strictly positive
-        if any(stdDev <= 0)
-            error('Standard deviation values must be strictly positive.');
+        % Strict validation: SD must be non-negative
+        if any(stdDev < 0)
+            error('Standard deviation values must be non-negative.');
         end
 
         % Theoretical definition
