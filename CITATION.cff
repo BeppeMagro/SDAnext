@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "SDAnext: Survival Data Analysis"
+message: "If you use SDAnext in your research, please cite the associated publication."
+type: software
+authors:
+  - family-names: Magro
+    given-names: Giuseppe
+    orcid: https://orcid.org/0000-0001-7140-8642
+repository-code: https://github.com/BeppeMagro/SDAnext
+license: Apache-2.0
+date-released: 2026
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Magro
+      given-names: Giuseppe
+  title: "SDAnext: an open-source MATLAB application for survival data analysis in radiobiology"
+  journal: "International Journal of Radiation Biology"
+  year: 2026
+  doi: 10.1080/09553002.2026.2637702

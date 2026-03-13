@@ -1,5 +1,6 @@
 # 🧬 SDAnext – Survival Data Analysis in MATLAB 📊
 
+[![DOI](https://img.shields.io/badge/DOI-IRAB%202026-blue)](https://doi.org/10.1080/09553002.2026.2637702)
 ---
 
 ## 🌟 Overview
@@ -19,12 +20,20 @@
 
 ## 📚 Citation
 
-If you use **SDAnext** in your research, please cite:
+If you use **SDAnext** in your research, please cite the associated publication:
 
-> Magro, G. (2026). *SDAnext (vX.Y) Survival Data Analysis*. GitHub. https://github.com/BeppeMagro/SDAnext  
-> Licensed under the Apache License 2.0.
+> Magro, G. (2026). *SDAnext: an open-source MATLAB application for survival data analysis in radiobiology*.  
+> **International Journal of Radiation Biology**, 1–9.  
+> https://doi.org/10.1080/09553002.2026.2637702
 
-👉 Replace `vX.Y` with the current version number of the software.
+If you specifically reference the software implementation, you may also cite the repository:
+
+> Magro, G. (2026). *SDAnext (vX.Y): Survival Data Analysis*. GitHub.  
+> https://github.com/BeppeMagro/SDAnext
+
+👉 Replace `vX.Y` with the version number used in your work.
+
+SDAnext is released under the **Apache License 2.0**.
 
 ---
 
