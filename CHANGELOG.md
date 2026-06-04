@@ -23,3 +23,6 @@
 
 ## [0.6] - 2026-03-03
 - fix: relax SD constraint to non-negative in GetDataFromDataTable
+
+## [0.7] - 2026-06-04
+- release: finalize v0.7 covariance-aware fit uncertainty and alpha-beta propagation
